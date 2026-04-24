@@ -31,7 +31,7 @@ const AcademicsModern = () => {
       subtitle: 'Ages 3-5',
       color: '#FF6B9D',
       gradient: 'linear-gradient(135deg, #FF6B9D 0%, #C44569 100%)',
-      image: '/src/assets/images/kindergarten.png',
+      image: '/images/kindergarten.png',
       description: 'A nurturing environment where young learners discover the joy of education through play-based learning. Opening soon!',
       features: [
         '100% English instruction',
@@ -49,7 +49,7 @@ const AcademicsModern = () => {
       subtitle: 'Grades 1-6',
       color: '#4ECDC4',
       gradient: 'linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%)',
-      image: '/src/assets/images/primary.png',
+      image: '/images/primary.png',
       description: 'Building strong foundations with Ontario curriculum while fostering critical thinking and creativity.',
       features: [
         '100% English instruction',
@@ -67,7 +67,7 @@ const AcademicsModern = () => {
       subtitle: 'Grades 7-12',
       color: '#667eea',
       gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      image: '/src/assets/images/hero3.png',
+      image: '/images/hero3.png',
       description: 'Preparing students for global success with rigorous Ontario curriculum and university preparation.',
       features: [
         '100% English instruction',

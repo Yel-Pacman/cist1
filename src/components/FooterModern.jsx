@@ -65,7 +65,7 @@ const FooterModern = () => {
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '1rem', marginBottom: '1rem' }}>
                 {/* Logo Image */}
                 <img
-                  src="/src/assets/images/logo.png"
+                  src="/images/logo.png"
                   alt="CIST"
                   style={{
                     height: '100px',
