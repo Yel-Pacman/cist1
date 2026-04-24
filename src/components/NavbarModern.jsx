@@ -62,7 +62,7 @@ const NavbarModern = ({ scrolled }) => {
           {/* Logo */}
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <img
-              src="/images/logo.png"
+              src="/images/logo.webp"
               alt="CIST"
               style={{
                 height: '100px',

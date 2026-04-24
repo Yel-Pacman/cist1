@@ -42,7 +42,7 @@ const NewsModern = () => {
       title: 'CIST Students Win International Science Fair',
       excerpt: 'Our Grade 10 students brought home gold medals from the International Science and Engineering Fair in Dubai.',
       author: 'Sarah Johnson',
-      image: '/images/hero1.png',
+      image: '/images/hero1.webp',
       content: 'We are incredibly proud to announce that our Grade 10 students represented CIST at the International Science and Engineering Fair in Dubai and won gold medals for their innovative renewable energy project. This achievement showcases the excellence of our STEM program.',
     },
     {
@@ -54,7 +54,7 @@ const NewsModern = () => {
       title: 'New STEM Lab Opening Ceremony',
       excerpt: 'State-of-the-art STEM laboratory officially opened with special guests from Canadian Embassy.',
       author: 'Michael Chen',
-      image: '/images/hero2.png',
+      image: '/images/hero2.webp',
       content: 'We are excited to announce the grand opening of our new state-of-the-art STEM laboratory. The ceremony was attended by dignitaries from the Canadian Embassy and featured hands-on demonstrations by our students.',
     },
     {
@@ -66,7 +66,7 @@ const NewsModern = () => {
       title: 'Holidays Calendar 2024-2025',
       excerpt: 'View all school holidays, breaks, and important dates for the upcoming academic year.',
       author: 'Admin Office',
-      image: '/images/calendar.png',
+      image: '/images/calendar.webp',
       content: 'The holidays calendar for the 2024-2025 school year is now available. Plan your family vacations and important events around school holidays, breaks, and professional development days.',
     },
     {
@@ -78,7 +78,7 @@ const NewsModern = () => {
       title: 'Basketball Team Regional Champions',
       excerpt: 'Our varsity basketball team won the regional championship for the third consecutive year.',
       author: 'Coach David',
-      image: '/images/hero1.png',
+      image: '/images/hero3.webp',
       content: 'Congratulations to our varsity basketball team for winning the regional championship! This marks their third consecutive title, showcasing the strength of our athletics program.',
     },
   ];

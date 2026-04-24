@@ -151,7 +151,7 @@ const AboutModern = () => {
               }}
             >
               <img
-                src="/images/about us.png"
+                src="/images/about us.webp"
                 alt="CIST Campus"
                 style={{
                   width: '100%',

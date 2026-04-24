@@ -8,9 +8,9 @@ const HeroModern = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const slides = [
-    { image: '/images/hero1.png', alt: 'School Campus' },
-    { image: '/images/hero2.png', alt: 'Students Learning' },
-    { image: '/images/hero3.png', alt: 'School Activities' },
+    { image: '/images/hero1.webp', alt: 'School Campus' },
+    { image: '/images/hero2.webp', alt: 'Students Learning' },
+    { image: '/images/hero3.webp', alt: 'School Activities' },
   ];
 
   useEffect(() => {
