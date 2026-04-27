@@ -244,10 +244,10 @@ const CampusLifeModern = () => {
           </div>
 
           {/* Show More Button - Only for All category */}
-          {selectedCategory === 'all' && !showMore && galleryItems.length > 6 && (
+          {selectedCategory === 'all' && galleryItems.length > 6 && (
             <div style={{ textAlign: 'center', marginTop: '2rem' }}>
               <button
-                onClick={() => setShowMore(true)}
+                onClick={() => setShowMore(!showMore)}
                 style={{
                   background: 'linear-gradient(135deg, #D32F2F 0%, #B71C1C 100%)',
                   color: 'white',
@@ -269,7 +269,7 @@ const CampusLifeModern = () => {
                   e.target.style.boxShadow = '0 4px 15px rgba(211, 47, 47, 0.3)';
                 }}
               >
-                Show More
+                {showMore ? 'View Less' : 'View More'}
               </button>
             </div>
           )}

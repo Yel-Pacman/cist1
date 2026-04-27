@@ -6,6 +6,7 @@ const NewsModern = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [expandedArticle, setExpandedArticle] = useState(null);
   const [lightboxImage, setLightboxImage] = useState(null);
+  const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -115,7 +116,7 @@ const NewsModern = () => {
   ];
 
   const filteredNews = activeFilter === 'all'
-    ? newsItems
+    ? (showMore ? newsItems : newsItems.slice(0, 5))
     : newsItems.filter(item => item.category === activeFilter);
 
   return (
@@ -176,7 +177,7 @@ const NewsModern = () => {
               {filters.map((filter) => (
                 <button
                   key={filter.id}
-                  onClick={() => setActiveFilter(filter.id)}
+                  onClick={() => { setActiveFilter(filter.id); setShowMore(false); }}
                   style={{
                     padding: '0.75rem 1.25rem',
                     borderRadius: '50px',
@@ -324,6 +325,37 @@ const NewsModern = () => {
                   </div>
                 </div>
               ))}
+
+              {/* View More/Less Button - Only for All filter */}
+              {activeFilter === 'all' && newsItems.length > 5 && (
+                <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+                  <button
+                    onClick={() => setShowMore(!showMore)}
+                    style={{
+                      background: 'linear-gradient(135deg, #D32F2F 0%, #B71C1C 100%)',
+                      color: 'white',
+                      padding: '1rem 2.5rem',
+                      borderRadius: '50px',
+                      border: 'none',
+                      fontSize: '1rem',
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      transition: 'all 0.3s ease',
+                      boxShadow: '0 4px 15px rgba(211, 47, 47, 0.3)',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.transform = 'translateY(-3px)';
+                      e.target.style.boxShadow = '0 8px 25px rgba(211, 47, 47, 0.4)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.transform = 'translateY(0)';
+                      e.target.style.boxShadow = '0 4px 15px rgba(211, 47, 47, 0.3)';
+                    }}
+                  >
+                    {showMore ? 'View Less' : 'View More'}
+                  </button>
+                </div>
+              )}
             </div>
           </div>
 
