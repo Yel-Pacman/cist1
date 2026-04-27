@@ -36,9 +36,12 @@ const CampusLifeModern = () => {
     { id: 1, src: '/images/hero1.webp', category: 'academics', title: 'Modern Classrooms' },
     { id: 2, src: '/images/hero2.webp', category: 'sports', title: 'Sports Facilities' },
     { id: 3, src: '/images/hero3.webp', category: 'arts', title: 'Art Studio' },
-    { id: 4, src: '/images/hero1.webp', category: 'community', title: 'Student Events' },
+    { id: 4, src: '/images/graduation1.webp', category: 'community', title: 'Graduation Celebration' },
     { id: 5, src: '/images/hero2.webp', category: 'academics', title: 'Science Lab' },
     { id: 6, src: '/images/hero3.webp', category: 'sports', title: 'Swimming Pool' },
+    { id: 7, src: '/images/graduation2.webp', category: 'community', title: 'Graduation Ceremony' },
+    { id: 8, src: '/images/graduation3.webp', category: 'community', title: 'Class of 2024' },
+    { id: 9, src: '/images/easter1.webp', category: 'community', title: 'Easter Celebration' },
   ];
 
   const activities = [

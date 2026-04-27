@@ -81,6 +81,18 @@ const NewsModern = () => {
       image: '/images/hero3.webp',
       content: 'Congratulations to our varsity basketball team for winning the regional championship! This marks their third consecutive title, showcasing the strength of our athletics program.',
     },
+    {
+      id: 5,
+      category: 'achievements',
+      categoryLabel: 'Achievement',
+      date: 'April 15, 2024',
+      readTime: '3 min',
+      title: 'Student Wins National Robotics Competition',
+      excerpt: 'One of our talented students brought home the trophy from the National Robotics Championship.',
+      author: 'Dr. Sarah Ahmed',
+      image: '/images/achievment1.webp',
+      content: 'We are thrilled to announce that one of our outstanding students has won the National Robotics Competition! This remarkable achievement showcases the excellence of our STEM and robotics program. The student demonstrated exceptional programming skills, engineering creativity, and problem-solving abilities. Congratulations to our champion!',
+    },
   ];
 
   const upcomingEvents = [
