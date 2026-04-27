@@ -5,6 +5,7 @@ const CampusLifeModern = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedImage, setSelectedImage] = useState(null);
+  const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -33,22 +34,22 @@ const CampusLifeModern = () => {
   ];
 
   const galleryItems = [
-    { id: 1, src: '/images/sport1.webp', category: 'sports', title: 'Basketball Tournament' },
-    { id: 2, src: '/images/sport2.webp', category: 'sports', title: 'Soccer Match' },
-    { id: 3, src: '/images/sport3.webp', category: 'sports', title: 'Swimming Competition' },
+    { id: 1, src: '/images/sport1.webp', category: 'sports', title: 'Football Tournament' },
+    { id: 2, src: '/images/sport2.webp', category: 'sports', title: 'Football Match' },
+    { id: 3, src: '/images/sport3.webp', category: 'sports', title: 'Football Championship' },
     { id: 4, src: '/images/graduation1.webp', category: 'community', title: 'Graduation Celebration' },
-    { id: 5, src: '/images/sport4.webp', category: 'sports', title: 'Track & Field' },
-    { id: 6, src: '/images/sport5.webp', category: 'sports', title: 'Tennis Championship' },
+    { id: 5, src: '/images/sport4.webp', category: 'sports', title: 'Football Game' },
+    { id: 6, src: '/images/sport5.webp', category: 'sports', title: 'Football Finals' },
     { id: 7, src: '/images/graduation2.webp', category: 'community', title: 'Graduation Ceremony' },
     { id: 8, src: '/images/graduation3.webp', category: 'community', title: 'Class of 2024' },
     { id: 9, src: '/images/easter1.webp', category: 'community', title: 'Easter Celebration' },
-    { id: 10, src: '/images/sport6.webp', category: 'sports', title: 'Volleyball Game' },
-    { id: 11, src: '/images/sport7.webp', category: 'sports', title: 'Athletics Day' },
-    { id: 12, src: '/images/sport8.webp', category: 'sports', title: 'Sports Training' },
-    { id: 13, src: '/images/sport9.webp', category: 'sports', title: 'Team Practice' },
-    { id: 14, src: '/images/sport10.webp', category: 'sports', title: 'Championship Finals' },
-    { id: 15, src: '/images/sport11.webp', category: 'sports', title: 'Sports Day' },
-    { id: 16, src: '/images/sport12.webp', category: 'sports', title: 'Inter School Match' },
+    { id: 10, src: '/images/sport6.webp', category: 'sports', title: 'Football Competition' },
+    { id: 11, src: '/images/sport7.webp', category: 'sports', title: 'Football Tournament' },
+    { id: 12, src: '/images/sport8.webp', category: 'sports', title: 'Football Training' },
+    { id: 13, src: '/images/sport9.webp', category: 'sports', title: 'Football Practice' },
+    { id: 14, src: '/images/sport10.webp', category: 'sports', title: 'Football Championship' },
+    { id: 15, src: '/images/sport11.webp', category: 'sports', title: 'Football Match' },
+    { id: 16, src: '/images/sport12.webp', category: 'sports', title: 'Inter School Football' },
     { id: 17, src: '/images/students.webp', category: 'community', title: 'Student Life' },
     { id: 18, src: '/images/graduation0.webp', category: 'community', title: 'Graduation Day' },
   ];
@@ -81,7 +82,7 @@ const CampusLifeModern = () => {
   ];
 
   const filteredItems = selectedCategory === 'all'
-    ? galleryItems
+    ? (showMore ? galleryItems : galleryItems.slice(0, 6))
     : galleryItems.filter(item => item.category === selectedCategory);
 
   return (
@@ -164,7 +165,7 @@ const CampusLifeModern = () => {
             {categories.map((cat) => (
               <button
                 key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
+                onClick={() => { setSelectedCategory(cat.id); setShowMore(false); }}
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -241,6 +242,37 @@ const CampusLifeModern = () => {
               </div>
             ))}
           </div>
+
+          {/* Show More Button - Only for All category */}
+          {selectedCategory === 'all' && !showMore && galleryItems.length > 6 && (
+            <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+              <button
+                onClick={() => setShowMore(true)}
+                style={{
+                  background: 'linear-gradient(135deg, #D32F2F 0%, #B71C1C 100%)',
+                  color: 'white',
+                  padding: '1rem 2.5rem',
+                  borderRadius: '50px',
+                  border: 'none',
+                  fontSize: '1rem',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                  boxShadow: '0 4px 15px rgba(211, 47, 47, 0.3)',
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.transform = 'translateY(-3px)';
+                  e.target.style.boxShadow = '0 8px 25px rgba(211, 47, 47, 0.4)';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.transform = 'translateY(0)';
+                  e.target.style.boxShadow = '0 4px 15px rgba(211, 47, 47, 0.3)';
+                }}
+              >
+                Show More
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Activities Grid */}
