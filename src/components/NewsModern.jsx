@@ -93,6 +93,18 @@ const NewsModern = () => {
       image: '/images/achievment1.webp',
       content: 'We are thrilled to announce that one of our outstanding students has won the National Robotics Competition! This remarkable achievement showcases the excellence of our STEM and robotics program. The student demonstrated exceptional programming skills, engineering creativity, and problem-solving abilities. Congratulations to our champion!',
     },
+    {
+      id: 6,
+      category: 'achievements',
+      categoryLabel: 'Achievement',
+      date: 'March 20, 2024',
+      readTime: '3 min',
+      title: 'CIST Students Win Ramadan Mini Football Tournament',
+      excerpt: 'Our students brought home the championship trophy from the Ramadan Mini Football Tournament.',
+      author: 'Coach Yassir',
+      image: '/images/sport10.webp',
+      content: 'Congratulations to our amazing students for winning the Ramadan Mini Football Tournament! The team showed exceptional skill, teamwork, and sportsmanship throughout the competition. This victory is a testament to their dedication and hard work in training. We are incredibly proud of their achievement!',
+    },
   ];
 
   const upcomingEvents = [
