@@ -9,8 +9,8 @@ const HeroModern = () => {
 
   const slides = [
     { image: '/images/graduation0.webp', alt: 'Graduation Celebration' },
-    { image: '/images/hero2.webp', alt: 'Students Learning' },
-    { image: '/images/hero3.webp', alt: 'School Activities' },
+    { image: '/images/graduation1.webp', alt: 'Graduation Ceremony' },
+    { image: '/images/graduation2.webp', alt: 'Class of 2024' },
   ];
 
   useEffect(() => {
