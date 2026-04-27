@@ -8,7 +8,7 @@ const HeroModern = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const slides = [
-    { image: '/images/hero1.webp', alt: 'School Campus' },
+    { image: '/images/graduation0.webp', alt: 'Graduation Celebration' },
     { image: '/images/hero2.webp', alt: 'Students Learning' },
     { image: '/images/hero3.webp', alt: 'School Activities' },
   ];

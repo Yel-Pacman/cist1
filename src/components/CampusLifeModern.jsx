@@ -33,15 +33,24 @@ const CampusLifeModern = () => {
   ];
 
   const galleryItems = [
-    { id: 1, src: '/images/hero1.webp', category: 'academics', title: 'Modern Classrooms' },
-    { id: 2, src: '/images/hero2.webp', category: 'sports', title: 'Sports Facilities' },
-    { id: 3, src: '/images/hero3.webp', category: 'arts', title: 'Art Studio' },
+    { id: 1, src: '/images/sport1.webp', category: 'sports', title: 'Basketball Tournament' },
+    { id: 2, src: '/images/sport2.webp', category: 'sports', title: 'Soccer Match' },
+    { id: 3, src: '/images/sport3.webp', category: 'sports', title: 'Swimming Competition' },
     { id: 4, src: '/images/graduation1.webp', category: 'community', title: 'Graduation Celebration' },
-    { id: 5, src: '/images/hero2.webp', category: 'academics', title: 'Science Lab' },
-    { id: 6, src: '/images/hero3.webp', category: 'sports', title: 'Swimming Pool' },
+    { id: 5, src: '/images/sport4.webp', category: 'sports', title: 'Track & Field' },
+    { id: 6, src: '/images/sport5.webp', category: 'sports', title: 'Tennis Championship' },
     { id: 7, src: '/images/graduation2.webp', category: 'community', title: 'Graduation Ceremony' },
     { id: 8, src: '/images/graduation3.webp', category: 'community', title: 'Class of 2024' },
     { id: 9, src: '/images/easter1.webp', category: 'community', title: 'Easter Celebration' },
+    { id: 10, src: '/images/sport6.webp', category: 'sports', title: 'Volleyball Game' },
+    { id: 11, src: '/images/sport7.webp', category: 'sports', title: 'Athletics Day' },
+    { id: 12, src: '/images/sport8.webp', category: 'sports', title: 'Sports Training' },
+    { id: 13, src: '/images/sport9.webp', category: 'sports', title: 'Team Practice' },
+    { id: 14, src: '/images/sport10.webp', category: 'sports', title: 'Championship Finals' },
+    { id: 15, src: '/images/sport11.webp', category: 'sports', title: 'Sports Day' },
+    { id: 16, src: '/images/sport12.webp', category: 'sports', title: 'Inter School Match' },
+    { id: 17, src: '/images/students.webp', category: 'community', title: 'Student Life' },
+    { id: 18, src: '/images/graduation0.webp', category: 'community', title: 'Graduation Day' },
   ];
 
   const activities = [
