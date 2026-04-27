@@ -211,9 +211,9 @@ const NewsModern = () => {
                   }}
                 >
                   <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-                    {/* Image - Clickable for calendar */}
+                    {/* Image - Clickable */}
                     <div 
-                      onClick={() => item.id === 3 && setLightboxImage(item.image)}
+                      onClick={() => setLightboxImage(item.image)}
                       style={{
                         width: '200px',
                         minHeight: '180px',
@@ -221,26 +221,10 @@ const NewsModern = () => {
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         flexShrink: 0,
-                        cursor: item.id === 3 ? 'pointer' : 'default',
+                        cursor: 'pointer',
                         position: 'relative',
                       }}
-                    >
-                      {item.id === 3 && (
-                        <div style={{
-                          position: 'absolute',
-                          inset: 0,
-                          backgroundColor: 'rgba(0,0,0,0.3)',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          color: 'white',
-                          fontSize: '0.75rem',
-                          fontWeight: 600,
-                        }}>
-                          Click to View
-                        </div>
-                      )}
-                    </div>
+                    />
 
                     {/* Content */}
                     <div style={{ flex: 1, padding: '1.5rem', minWidth: '250px' }}>
@@ -461,7 +445,7 @@ const NewsModern = () => {
         </div>
       </div>
 
-      {/* Lightbox Modal for Calendar */}
+      {/* Lightbox Modal for Images */}
       {lightboxImage && (
         <div 
           onClick={() => setLightboxImage(null)}
@@ -479,7 +463,7 @@ const NewsModern = () => {
         >
           <img 
             src={lightboxImage}
-            alt="Calendar"
+            alt="News Image"
             style={{
               maxWidth: '90%',
               maxHeight: '90%',
