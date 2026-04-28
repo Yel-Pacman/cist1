@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ArrowLeft, CheckCircle, User, Phone, Mail, Users, MessageCircle } from 'lucide-react';
+import { ArrowLeft, CheckCircle, User, Phone, Mail, Users, MessageCircle, FileText } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import NavbarModern from '../components/NavbarModern';
 
 const EnrollmentPage = () => {
   const navigate = useNavigate();
@@ -15,6 +16,7 @@ const EnrollmentPage = () => {
     email: ''
   });
 
+  const [agreementChecked, setAgreementChecked] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const handleInputChange = (e) => {
@@ -105,6 +107,8 @@ const EnrollmentPage = () => {
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#f8f9fa' }}>
+      <NavbarModern scrolled={true} />
+      
       {/* Header */}
       <div style={{
         background: 'linear-gradient(135deg, #D32F2F 0%, #B71C1C 100%)',
@@ -351,23 +355,55 @@ const EnrollmentPage = () => {
               </div>
             </div>
 
+            {/* Agreement Checkbox */}
+            <div style={{ marginBottom: '1.5rem', padding: '1rem', backgroundColor: '#f8f9fa', borderRadius: '10px' }}>
+              <label style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', cursor: 'pointer' }}>
+                <input
+                  type="checkbox"
+                  name="agreement"
+                  checked={agreementChecked}
+                  onChange={(e) => setAgreementChecked(e.target.checked)}
+                  required
+                  style={{ marginTop: '0.25rem', width: '18px', height: '18px', cursor: 'pointer', accentColor: '#D32F2F' }}
+                />
+                <span style={{ fontSize: '0.95rem', color: '#333', lineHeight: 1.5 }}>
+                  I have read and agree to the{' '}
+                  <a
+                    href="/pdfs/Contact.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: '#D32F2F', fontWeight: 600, textDecoration: 'underline', display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}
+                  >
+                    PARENT-SCHOOL AGREEMENT
+                    <FileText size={14} />
+                  </a>
+                </span>
+              </label>
+            </div>
+
             <button
               type="submit"
+              disabled={!agreementChecked}
               style={{
                 width: '100%',
-                background: 'linear-gradient(135deg, #D32F2F 0%, #B71C1C 100%)',
+                background: agreementChecked 
+                  ? 'linear-gradient(135deg, #D32F2F 0%, #B71C1C 100%)' 
+                  : 'linear-gradient(135deg, #ccc 0%, #999 100%)',
                 color: 'white',
                 padding: '1rem',
                 borderRadius: '12px',
                 border: 'none',
                 fontSize: '1.1rem',
                 fontWeight: 600,
-                cursor: 'pointer',
-                transition: 'all 0.3s ease'
+                cursor: agreementChecked ? 'pointer' : 'not-allowed',
+                transition: 'all 0.3s ease',
+                opacity: agreementChecked ? 1 : 0.6
               }}
               onMouseEnter={(e) => {
-                e.target.style.transform = 'translateY(-2px)';
-                e.target.style.boxShadow = '0 8px 20px rgba(211, 47, 47, 0.3)';
+                if (agreementChecked) {
+                  e.target.style.transform = 'translateY(-2px)';
+                  e.target.style.boxShadow = '0 8px 20px rgba(211, 47, 47, 0.3)';
+                }
               }}
               onMouseLeave={(e) => {
                 e.target.style.transform = 'translateY(0)';
