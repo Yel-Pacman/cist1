@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowLeft, CheckCircle, User, Phone, Mail, Users, MessageCircle, FileText } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import NavbarModern from '../components/NavbarModern';
+import FooterModern from '../components/FooterModern';
 
 const EnrollmentPage = () => {
   const navigate = useNavigate();
@@ -106,14 +107,15 @@ const EnrollmentPage = () => {
   }
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#f8f9fa' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#f8f9fa', display: 'flex', flexDirection: 'column' }}>
       <NavbarModern scrolled={true} />
       
-      {/* Header */}
+      {/* Header - with margin to clear navbar */}
       <div style={{
         background: 'linear-gradient(135deg, #D32F2F 0%, #B71C1C 100%)',
         color: 'white',
-        padding: '2rem 0'
+        padding: '2rem 0',
+        marginTop: '70px'
       }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
@@ -449,6 +451,8 @@ const EnrollmentPage = () => {
       >
         <MessageCircle size={32} color="white" fill="white" />
       </a>
+      
+      <FooterModern />
     </div>
   );
 };
