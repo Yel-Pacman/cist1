@@ -34,24 +34,27 @@ const CampusLifeModern = () => {
   ];
 
   const galleryItems = [
+    // Sports
     { id: 1, src: '/images/sport1.webp', category: 'sports', title: 'Football Tournament' },
     { id: 2, src: '/images/sport2.webp', category: 'sports', title: 'Football Match' },
     { id: 3, src: '/images/sport3.webp', category: 'sports', title: 'Football Championship' },
+    { id: 10, src: '/images/sport6.webp', category: 'sports', title: 'Football Competition' },
+    { id: 14, src: '/images/sport10.webp', category: 'sports', title: 'Football Championship' },
+    // Community
     { id: 4, src: '/images/graduation1.webp', category: 'community', title: 'Graduation Celebration' },
-    { id: 5, src: '/images/sport4.webp', category: 'sports', title: 'Football Game' },
-    { id: 6, src: '/images/sport5.webp', category: 'sports', title: 'Football Finals' },
     { id: 7, src: '/images/graduation2.webp', category: 'community', title: 'Graduation Ceremony' },
     { id: 8, src: '/images/graduation3.webp', category: 'community', title: 'Class of 2024' },
     { id: 9, src: '/images/easter1.webp', category: 'community', title: 'Easter Celebration' },
-    { id: 10, src: '/images/sport6.webp', category: 'sports', title: 'Football Competition' },
-    { id: 11, src: '/images/sport7.webp', category: 'sports', title: 'Football Tournament' },
-    { id: 12, src: '/images/sport8.webp', category: 'sports', title: 'Football Training' },
-    { id: 13, src: '/images/sport9.webp', category: 'sports', title: 'Football Practice' },
-    { id: 14, src: '/images/sport10.webp', category: 'sports', title: 'Football Championship' },
-    { id: 15, src: '/images/sport11.webp', category: 'sports', title: 'Football Match' },
-    { id: 16, src: '/images/sport12.webp', category: 'sports', title: 'Inter School Football' },
     { id: 17, src: '/images/students.webp', category: 'community', title: 'Student Life' },
     { id: 18, src: '/images/graduation0.webp', category: 'community', title: 'Graduation Day' },
+    // Arts (using graduation/student images as arts placeholders)
+    { id: 101, src: '/images/graduation1.webp', category: 'arts', title: 'Art Exhibition' },
+    { id: 102, src: '/images/graduation2.webp', category: 'arts', title: 'Music Performance' },
+    { id: 103, src: '/images/students.webp', category: 'arts', title: 'Drama Club' },
+    // Academics (using student images as academics placeholders)
+    { id: 201, src: '/images/students.webp', category: 'academics', title: 'Science Fair' },
+    { id: 202, src: '/images/graduation3.webp', category: 'academics', title: 'Robotics Club' },
+    { id: 203, src: '/images/easter1.webp', category: 'academics', title: 'Debate Team' },
   ];
 
   const activities = [
@@ -81,8 +84,28 @@ const CampusLifeModern = () => {
     },
   ];
 
+  // Get one representative item from each category for "All" view
+  const getMixedGalleryItems = () => {
+    const sports = galleryItems.filter(item => item.category === 'sports');
+    const community = galleryItems.filter(item => item.category === 'community');
+    const arts = galleryItems.filter(item => item.category === 'arts');
+    const academics = galleryItems.filter(item => item.category === 'academics');
+    
+    // Pick one from each category (6 total, with 2 extra from most populated categories)
+    const mixed = [
+      sports[0],           // 1 sport
+      community[0],      // 1 community
+      arts[0],           // 1 arts
+      academics[0],      // 1 academics
+      sports[1] || community[1],  // 5th item
+      community[1] || sports[2],  // 6th item
+    ].filter(Boolean); // Remove any undefined
+    
+    return mixed;
+  };
+
   const filteredItems = selectedCategory === 'all'
-    ? (showMore ? galleryItems : galleryItems.slice(0, 6))
+    ? (showMore ? galleryItems : getMixedGalleryItems())
     : galleryItems.filter(item => item.category === selectedCategory);
 
   return (
