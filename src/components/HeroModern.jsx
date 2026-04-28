@@ -77,20 +77,24 @@ const HeroModern = () => {
         zIndex: 10,
         textAlign: 'center',
         color: 'white',
-        padding: '0 1.5rem',
+        padding: '0 1rem',
         maxWidth: '900px',
+        width: '100%',
+        boxSizing: 'border-box',
         opacity: isLoaded ? 1 : 0,
         transform: isLoaded ? 'translateY(0)' : 'translateY(30px)',
         transition: 'all 0.8s ease-out',
       }}>
         {/* Main Title */}
         <h1 style={{
-          fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
+          fontSize: 'clamp(1.8rem, 5vw, 4.5rem)',
           fontWeight: 700,
           marginBottom: '1rem',
-          lineHeight: 1.1,
+          lineHeight: 1.2,
           fontFamily: 'Playfair Display, serif',
           textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
+          wordWrap: 'break-word',
+          overflowWrap: 'break-word',
         }}>
           Excellence in
           <span style={{ color: '#FF6B6B', display: 'block' }}>Education</span>
@@ -98,12 +102,17 @@ const HeroModern = () => {
 
         {/* Subtitle */}
         <p style={{
-          fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+          fontSize: 'clamp(0.9rem, 2vw, 1.25rem)',
           marginBottom: '2rem',
           opacity: 0.9,
           maxWidth: '600px',
+          width: '100%',
           margin: '0 auto 2rem',
           lineHeight: 1.6,
+          padding: '0 0.5rem',
+          boxSizing: 'border-box',
+          wordWrap: 'break-word',
+          overflowWrap: 'break-word',
         }}>
           Canadian International School Tangier - Nurturing global citizens 
           with Canadian curriculum and international standards

@@ -148,7 +148,7 @@ const EnrollmentPage = () => {
       </div>
 
       {/* Simple Form */}
-      <div className="container" style={{ padding: '3rem 1rem', maxWidth: '600px', margin: '0 auto' }}>
+      <div className="container" style={{ padding: '5rem 1rem 3rem', maxWidth: '600px', margin: '0 auto' }}>
         <form name="pre-registration" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={handleSubmit}>
           <input type="hidden" name="form-name" value="pre-registration" />
           
