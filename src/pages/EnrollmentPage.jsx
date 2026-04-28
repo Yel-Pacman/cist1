@@ -371,7 +371,7 @@ const EnrollmentPage = () => {
                 <span style={{ fontSize: '0.95rem', color: '#333', lineHeight: 1.5 }}>
                   I have read and agree to the{' '}
                   <a
-                    href="/pdfs/Contact.pdf"
+                    href="/pdfs/parent-school-agreement.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ color: '#D32F2F', fontWeight: 600, textDecoration: 'underline', display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}
