@@ -65,23 +65,10 @@ const CampusLifeModern = () => {
       color: '#4ECDC4',
     },
     {
-      title: 'Primary School',
+      title: 'Academic Clubs',
       icon: BookOpen,
-      items: ['Grades 1-2', 'Grades 3-4', 'Grades 5-6'],
+      items: ['Robotics', 'Debate', 'Chess', 'Science Club'],
       color: '#667eea',
-    },
-    {
-      title: 'Middle School',
-      icon: BookOpen,
-      items: ['Grade 7', 'Grade 8'],
-      color: '#2196F3',
-    },
-    {
-      title: 'High School',
-      icon: BookOpen,
-      items: ['Grades 9-10', 'Grades 11-12'],
-      color: '#9C27B0',
-      image: '/images/graduation1.webp',
     },
     {
       title: 'Community Service',
@@ -321,10 +308,10 @@ const CampusLifeModern = () => {
               key={index}
               style={{
                 backgroundColor: 'white',
+                padding: '2rem',
                 borderRadius: '20px',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
                 transition: 'all 0.3s ease',
-                overflow: 'hidden',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-8px)';
@@ -335,31 +322,21 @@ const CampusLifeModern = () => {
                 e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.05)';
               }}
             >
-              {activity.image && (
-                <div style={{ width: '100%', height: '120px', overflow: 'hidden' }}>
-                  <img
-                    src={activity.image}
-                    alt={activity.title}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                  />
-                </div>
-              )}
-              <div style={{ padding: '2rem' }}>
-                <div
-                  style={{
-                    width: '60px',
-                    height: '60px',
-                    backgroundColor: activity.color,
-                    borderRadius: '16px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginBottom: '1.25rem',
-                    color: 'white',
-                  }}
-                >
-                  <activity.icon size={28} />
-                </div>
+              <div
+                style={{
+                  width: '60px',
+                  height: '60px',
+                  backgroundColor: activity.color,
+                  borderRadius: '16px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '1.25rem',
+                  color: 'white',
+                }}
+              >
+                <activity.icon size={28} />
+              </div>
               <h4 style={{ fontWeight: 700, marginBottom: '1rem', color: '#1a1a1a' }}>
                 {activity.title}
               </h4>
@@ -381,7 +358,6 @@ const CampusLifeModern = () => {
                   </li>
                 ))}
               </ul>
-              </div>
             </div>
           ))}
         </div>
